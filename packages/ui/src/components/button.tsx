@@ -35,3 +35,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
 });
+
+// Button (ex: Search)
+// Button Group (ex: Carousel selectors)
+// Tag (squared, smaller font)
