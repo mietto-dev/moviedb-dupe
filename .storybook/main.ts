@@ -1,5 +1,4 @@
 import type { StorybookConfig } from "@storybook/react-vite";
-
 import { dirname, join } from "path";
 
 /**
@@ -15,13 +14,7 @@ function getAbsolutePathFolder(value: string): any {
 }
 
 const config: StorybookConfig = {
-  stories: [
-    "../**/*.mdx",
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../lib/**/*.mdx",
-    "../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-  ],
+  stories: ["../DOCS.mdx", "../**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     getAbsolutePath("@storybook/addon-onboarding"),
     getAbsolutePath("@storybook/addon-links"),
@@ -40,7 +33,7 @@ const config: StorybookConfig = {
         ...config.resolve,
         alias: {
           ...config.resolve?.alias,
-          "@components": getAbsolutePathFolder("../lib"),
+          "@components": getAbsolutePathFolder("../packages/ui/lib"),
         },
       },
     };

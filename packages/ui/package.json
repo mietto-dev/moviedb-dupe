@@ -10,22 +10,11 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "tailwind": "tailwindcss -i ./lib/input.css -o ./lib/global.css --watch"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.4.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@storybook/addon-essentials": "^8.1.2",
-    "@storybook/addon-interactions": "^8.1.2",
-    "@storybook/addon-links": "^8.1.2",
-    "@storybook/addon-onboarding": "^8.1.2",
-    "@storybook/blocks": "^8.1.2",
-    "@storybook/react": "^8.1.2",
-    "@storybook/react-vite": "^8.1.2",
-    "@storybook/test": "^8.1.2",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",
@@ -33,10 +22,8 @@
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
-    "storybook": "^8.1.2",
     "tailwind-compose": "^1.1.1",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.3.3"
