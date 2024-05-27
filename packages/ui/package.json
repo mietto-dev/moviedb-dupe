@@ -3,14 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./button": "./lib/button.tsx",
-    "./card": "./lib/card.tsx",
-    "./code": "./lib/code.tsx"
+    ".": "./lib/index.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
-    "generate:component": "turbo gen react-component",
-    "tailwind": "tailwindcss -i ./lib/input.css -o ./lib/global.css --watch"
+    "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

@@ -1,15 +1,5 @@
 import * as React from "react";
-
-type TypographyProps = React.PropsWithChildren & {
-  size?: TypographySize;
-};
-
-enum TypographySize {
-  SMALL,
-  MEDIUM,
-  LARGE,
-  LARGEST,
-}
+import { TypographyProps, TypographySize } from "./types";
 
 /**
  * Stylized Heading element

@@ -4,11 +4,12 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "dev:ui": "turbo run dev --filter=ui",
+    "dev:ui": "storybook dev -p 6006 && tailwindcss -i ./packages/ui/lib/input.css -o ./packages/ui/lib/global.css --watch",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "build-storybook": "storybook build",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "tailwind": "tailwindcss -i ./packages/ui/lib/input.css -o ./packages/ui/lib/global.css --watch"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
