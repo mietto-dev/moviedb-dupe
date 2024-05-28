@@ -1,13 +1,5 @@
 import * as React from "react";
-import {
-  Article,
-  Body,
-  Footer,
-  Header,
-  ImageWrapper,
-  Layout,
-  LayoutWrapper,
-} from "./styled";
+import { Article, Body, Footer, FullWrapper, Header, Layout } from "./styled";
 import {
   CardBarType,
   CardBodyType,
@@ -73,23 +65,34 @@ export const Card: CardType = ({ children, onClick, coverImage }) => {
   return (
     <Article $clickable={!!onClick} onClick={clickHandler}>
       {coverImage && (
-        <ImageWrapper>
-          <img src={coverImage} className="object-contain" />
-        </ImageWrapper>
+        <FullWrapper>
+          <img
+            src={coverImage}
+            className="object-cover relative w-full h-full"
+            style={{ objectFit: "cover" }}
+          />
+        </FullWrapper>
       )}
-      <LayoutWrapper>
-        <Layout $overlayContent={Boolean(coverImage)}>
+      <FullWrapper>
+        <Layout
+          style={{
+            gridTemplateRows:
+              "min-content minmax(auto, min-content) min-content",
+            gridAutoFlow: "column",
+          }}
+          $overlayContent={Boolean(coverImage)}
+        >
           {header}
           {losen.length > 0 ? <Card.Body>{losen}</Card.Body> : body}
           {footer}
         </Layout>
-      </LayoutWrapper>
+      </FullWrapper>
     </Article>
   );
 };
 
 const CardBody: CardBodyType = ({ children }) => {
-  return <Body>{children}</Body>;
+  return <Body style={{ overflowY: "auto" }}>{children}</Body>;
 };
 
 const CardFooter: CardBarType = ({ children, onClick, negative = false }) => {
@@ -101,7 +104,12 @@ const CardFooter: CardBarType = ({ children, onClick, negative = false }) => {
   };
 
   return (
-    <Footer $negative={negative} $clickable={!!onClick} onClick={clickHandler}>
+    <Footer
+      style={{ gridRowStart: "none", alignSelf: "end" }}
+      $negative={negative}
+      $clickable={!!onClick}
+      onClick={clickHandler}
+    >
       {children}
     </Footer>
   );

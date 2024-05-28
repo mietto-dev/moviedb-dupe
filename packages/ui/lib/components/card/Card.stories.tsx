@@ -46,7 +46,7 @@ export const WithFooter: Story = {
   },
   render: (args) => (
     <Card {...args}>
-      <Card.Footer negative>Footer lalala</Card.Footer>
+      <Card.Footer negative>My Footer</Card.Footer>
     </Card>
   ),
 };
@@ -58,7 +58,7 @@ export const WithHeader: Story = {
   },
   render: (args) => (
     <Card {...args}>
-      <Card.Header negative>Olarrr</Card.Header>
+      <Card.Header negative>My Header</Card.Header>
     </Card>
   ),
 };
@@ -70,9 +70,26 @@ export const WithAll: Story = {
   },
   render: (args) => (
     <Card {...args}>
-      <Card.Header negative>Titulo</Card.Header>
-      Buceta
-      <Card.Footer>Bl;alasla</Card.Footer>
+      <Card.Header negative>My Header</Card.Header>
+      Contents outside of tag
+      <Card.Footer>My Footer</Card.Footer>
+    </Card>
+  ),
+};
+
+export const WithBody: Story = {
+  args: {
+    coverImage:
+      "https://media.themoviedb.org/t/p/w276_and_h350_face/z6ZEqpIkh1LYQXgSNMcc8akW3ZR.jpg",
+  },
+  render: (args) => (
+    <Card {...args}>
+      <Card.Header negative>My Header</Card.Header>
+      <Card.Body>
+        <h3>Inside Tag</h3>
+        <p>Contents here are inside Card.Body tag</p>
+      </Card.Body>
+      <Card.Footer>My Footer</Card.Footer>
     </Card>
   ),
 };
